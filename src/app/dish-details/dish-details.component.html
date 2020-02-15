@@ -1,7 +1,7 @@
 <div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column"
     fxLayoutAlign.gt-md="space-around center" fxLayoutGap="10px" fxLayoutGap.xs="0">
-    <div fxFlex="40">
-        <mat-card *ngIf="selection">
+    <div fxFlex="40" *ngIf="selection">
+        <mat-card >
             <mat-card-header>
                 <mat-card-title>
                     <h3>{{selection.name | uppercase}}</h3>
@@ -27,5 +27,9 @@
                 <span matLine>--{{review.author}} {{review.date | date}}</span>
             </mat-list-item>
         </mat-list>
+    </div>
+    <div fxFlex [hidden]="selection">
+        <mat-spinner></mat-spinner>
+        <h4>Loading . . . Please wait</h4>
     </div>
 </div>
