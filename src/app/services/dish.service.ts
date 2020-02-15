@@ -22,4 +22,9 @@ export class DishService {
   getFeatureDish(): Observable<Dish> {
     return of(DISHES.find(dish => dish.featured)).pipe(delay(2000));
   }
+
+  getDishIds(): Observable<String[] | any>{
+    return of(DISHES.map(dish => dish.id));
+  }
+ 
 }
