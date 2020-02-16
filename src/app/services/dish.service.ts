@@ -3,12 +3,13 @@ import { Dish } from '../shared/dish';
 import { DISHES } from '../shared/dishes';
 import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
+import { Comment } from '../shared/comment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DishService {
-
+  comments: Comment[]
   constructor() { }
 
   getDishes(): Observable<Dish[]> {
@@ -26,5 +27,7 @@ export class DishService {
   getDishIds(): Observable<String[] | any>{
     return of(DISHES.map(dish => dish.id));
   }
+
+  
  
 }

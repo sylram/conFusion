@@ -19,6 +19,7 @@ export class ContactComponent implements OnInit {
     'telnum': '',
     'email': ''
   };
+  
   validationMessages = {
     'firstname': {
       'required': 'First Name is required.',
